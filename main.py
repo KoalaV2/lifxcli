@@ -12,9 +12,9 @@ def main(color):
     lifx = LifxLAN(1)
 
     devices = lifx.get_lights()
-    if devices == []:
-        print("No lights found")
-        return ""
+    #if devices == []:
+        #print("No lights found")
+        #return ""
     print(f"Found light: {devices}")
 
     original_colors = lifx.get_color_all_lights()
@@ -49,5 +49,8 @@ def main(color):
         lifx.set_color_all_lights(PINK)
 
 if __name__=="__main__":
-    color = input("What color do you want to set the light to? \n :")
+    try:
+        color = sys.argv[1]
+    except IndexError:
+        color = input("What color do you want to set the light to? \n :")
     main(color)
