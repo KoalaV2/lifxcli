@@ -12,9 +12,6 @@ def main(color):
     lifx = LifxLAN(1)
 
     devices = lifx.get_lights()
-    #if devices == []:
-        #print("No lights found")
-        #return ""
     print(f"Found light: {devices}")
 
     original_colors = lifx.get_color_all_lights()
