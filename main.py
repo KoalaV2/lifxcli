@@ -3,7 +3,7 @@
 import sys
 from time import sleep
 
-from lifxlan import BLUE, CYAN, GREEN, LifxLAN, ORANGE, PINK, PURPLE, RED, YELLOW
+from lifxlan import BLUE, CYAN, GREEN, LifxLAN, ORANGE, PINK, PURPLE, RED, YELLOW, COLD_WHITE, WARM_WHITE, GOLD
 
 
 def main(color):
@@ -32,7 +32,10 @@ def main(color):
             "GREEN":GREEN,
             "ORANGE":ORANGE,
             "PURPLE":PURPLE,
-            "YELLOW":YELLOW
+            "YELLOW":YELLOW,
+            "GOLD":GOLD,
+            "WARM": WARM_WHITE,
+            "COLD": COLD_WHITE
             }
 
     print("Turning on the light...")
