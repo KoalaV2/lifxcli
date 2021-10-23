@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # coding=utf-8
-import sys
-from time import sleep
 
+import sys
 from lifxlan import BLUE, CYAN, GREEN, LifxLAN, ORANGE, PINK, PURPLE, RED, YELLOW, COLD_WHITE, WARM_WHITE, GOLD
 
 
@@ -13,8 +12,6 @@ def main(color):
 
     devices = lifx.get_lights()
     print(f"Found light: {devices}")
-
-    original_colors = lifx.get_color_all_lights()
 
     color_up = str(color.upper())
 
