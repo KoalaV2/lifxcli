@@ -13,9 +13,7 @@ def main(color):
     devices = lifx.get_lights()
     print(f"Found light: {devices}")
 
-    color_up = str(color.upper())
-
-    if color_up == "OFF":
+    if color == "OFF":
         lifx.set_power_all_lights("off")
         print("Turned off the light..")
         return()
@@ -29,6 +27,7 @@ def main(color):
             "GREEN":GREEN,
             "ORANGE":ORANGE,
             "PURPLE":PURPLE,
+            "PINK":PINK,
             "YELLOW":YELLOW,
             "GOLD":GOLD,
             "WARM": WARM_WHITE,
@@ -38,16 +37,15 @@ def main(color):
     print("Turning on the light...")
     lifx.set_power_all_lights("on")
 
-    if color_up in color_name:
-        print(f"Setting color to {color_up}")
-        lifx.set_color_all_lights(color_name[color_up])
+    if color in color_name:
+        print(f"Setting color to {color}")
+        lifx.set_color_all_lights(color_name[color])
     else:
-        print("Color not found, defaulting to pink")
-        lifx.set_color_all_lights(PINK)
+        print("Color not found.")
 
 if __name__=="__main__":
     try:
         color = sys.argv[1]
     except IndexError:
         color = input("What color do you want to set the light to? \n :")
-    main(color)
+    main(color.upper())
